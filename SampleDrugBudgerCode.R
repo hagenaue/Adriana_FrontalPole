@@ -90,7 +90,11 @@ BigOlListOfDrugsInfluencingExpresssionOfAllTopGenes<-c(ATopGene_DrugBudger_Datab
   
 BigOlListOfGenesInfluencedByThoseDrugs<-c(ATopGene_DrugBudger_Database1$GeneSymbol, ATopGene_DrugBudger_Database2$GeneSymbol, etc etc - same order of data.frames just a different column grabbed)
 
-BigOlGrandList<-data.frame(Drug.Name=BigOlListOfGenesInfluencedByThoseDrugs, GeneSymbol=BigOlListOfDrugsInfluencingExpresssionOfAllTopGenes)
+BigOlListOfHowThoseDrugsInfluenceExpression<-c(ATopGene_DrugBudger_Database1$Fold.Change, ATopGene_DrugBudger_Database2$Fold.Change, etc etc - same order of data.frames just a different column grabbed)
+
+BigOlGrandList<-data.frame(Drug.Name=BigOlListOfGenesInfluencedByThoseDrugs, Fold.Change=BigOlListOfHowThoseDrugsInfluenceExpression, GeneSymbol=BigOlListOfDrugsInfluencingExpresssionOfAllTopGenes)
+
+write.csv(BigOlGrandList, 'BigOlGrandListOfDrugsForTopGenes.csv')
 
 #Which drugs show up a lot?
 
