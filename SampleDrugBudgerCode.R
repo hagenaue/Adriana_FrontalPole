@@ -49,7 +49,7 @@ str(ATopGene_DrugBudger_Database1)
 #You will need to do this for all of your data.frames (19 iterations?), so could be looped or just done by hand (copy, paste, change data.frame name)
 #To get this code to work, you will need to make the column name match what you see using the str() command
 
-ATopGene_DrugBudger_Database1$'Drug Name'<-tolower(ATopGene_DrugBudger_Database1$'Drug Name') 
+ATopGene_DrugBudger_Database1$'Drug.Name'<-tolower(ATopGene_DrugBudger_Database1$'Drug.Name') 
 
 #The command for joining things is:
 #By references the shared column name in the two databases
@@ -66,7 +66,42 @@ ListOfDrugsForPritzker_vs_ATopGene_DrugBudger_Database1<-join(ListOfDrugsForPrit
 
 dfs<-list(ListOfDrugsForPritzker, ListOfDrugsForPritzker_vs_ATopGene_DrugBudger_Database1, ListOfDrugsForPritzker_vs_ATopGene_DrugBudger_Database2, ...)
 
-MasterDatabase_TopGenes_DrugBudger<-join_all(dfs, by='Drug Name', type = "left", match = "all")
+MasterDatabase_TopGenes_DrugBudger<-join_all(dfs, by='Drug.Name', type = "left", match = "all")
 
 #On second thought, if there are more than one entry per drug per gene per database, we are going to end up with all combinations across databases, which may increase the number of rows exponentially :(
+
+##############################
+
+#Another thing we could do is determine if there are any drugs that effect many of our top genes and therefore could be a potential therapeutic.
+#This would be especially useful/interesting if the effects of the drug on gene expression are the *opposite* of the effect of diagnosis on gene expression.
+#E.g. a drug that both increases HTR2B and decreases ABAT, etc...
+
+#A preliminary way to answer this question would be to simply compile a master database of *all drugs* effecting *all top genes*, and then see what comes up repeatedly.
+
+#Example code:
+
+#Add a column to each drug budger data.frame that indicates the gene influenced:
+#Pretending that the gene is ABAT for this data.frame
+e.g., ATopGene_DrugBudger_Database1$GeneSymbol<-rep("ABAT", nrow(ATopGene_DrugBudger_Database1))
+
+#Then we can combine all of the data.frames into one master data.frame grabbing just the drug.name and genesymbol columns
+
+BigOlListOfDrugsInfluencingExpresssionOfAllTopGenes<-c(ATopGene_DrugBudger_Database1$Drug.Name, ATopGene_DrugBudger_Database2$Drug.Name, etc etc)
+  
+BigOlListOfGenesInfluencedByThoseDrugs<-c(ATopGene_DrugBudger_Database1$GeneSymbol, ATopGene_DrugBudger_Database2$GeneSymbol, etc etc - same order of data.frames just a different column grabbed)
+
+BigOlGrandList<-data.frame(Drug.Name=BigOlListOfGenesInfluencedByThoseDrugs, GeneSymbol=BigOlListOfDrugsInfluencingExpresssionOfAllTopGenes)
+
+#Which drugs show up a lot?
+
+#This is a table of how many times each of the drugs shows up in the database across all genes:
+table(BigOlGrandList$Drug.Name)
+
+#This is a table of how many times each of the drugs shows up in the database for each gene:
+table(BigOlGrandList$Drug.Name, BigOlGrandList$GeneSymbol)
+
+#... we could do some fancy analysis with sorting etc, or just output it and play with it in Excel (e.g. poking around and figure out which drugs show up a lot):
+
+write.csv(table(BigOlGrandList$Drug.Name, BigOlGrandList$GeneSymbol), 'Drug_vs_TopGenes_CrossTable.csv')
+
 
