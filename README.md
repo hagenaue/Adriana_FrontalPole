@@ -7,6 +7,9 @@ Adriana Medina, Megan Hastings Hagenauer, David M. Krolewski, Evan Hughes, Liam 
 medRxiv 2022.06.03.22275600; doi: https://doi.org/10.1101/2022.06.03.22275600
 (Preprint)
 
+This code was primarily written by Megan Hagenauer, with some additional contribution by Liam Cannon Thew Forrester and Evelyn Richardson.
+
+
 # Navigating the code:
 
 In general, the files are numbered in the order that the analysis was performed. 
@@ -14,7 +17,8 @@ In general, the files are numbered in the order that the analysis was performed.
 Note that for logistical reasons the raw qPCR files for each card are not included in this repository, but I have included the concatenated version of their results ("Concatenated_GabaGlu_wSubjectInfo.csv" , "Concatenated_DA5HT_wSubjectInfo.csv") produced by lines 333-986 in the code.  
 The full qPCR files and metadata will also be released on FigShare (link TBA).
 
-The code was intended for single use, and is minimally annotated and occassionally non-linear (especially in areas of troubleshooting). Feel free to message me if you have questions.
+The code was intended for single use, and is minimally annotated and occasionally non-linear (especially in areas of troubleshooting) or completely tangential to the primary goals of the project. Feel free to message me if you have questions.
 
-The code for some of the later analyses, including the meta-analysis of previous BA10 microarray studies, are found in other repositories (link TBA).
+The code for some of the later analyses, including the meta-analysis of previous BA10 microarray studies, are found in other repositories:
+https://github.com/hagenaue/FrontalPole_Microarray
 
