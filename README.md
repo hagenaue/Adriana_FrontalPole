@@ -2,8 +2,8 @@
 
 This repository contains data and analysis code for:
 
-Neurotransmission-Related Gene Expression in the Frontal Pole (Brodmann Area 10) is Altered in Subjects with Bipolar Disorder and Schizophrenia
-Adriana Medina, Megan Hastings Hagenauer, David M. Krolewski, Evan Hughes, Liam Cannon Thew Forrester, David M. Walsh, Maria Waselus, Evelyn Richardson, Cortney A. Turner, Adolfo Sequeira, Preston Cartagena, Robert C. Thompson, Marquis Vawter, Blynn Bunney, Richard M. Myers, Jack D. Barchas, Francis Lee, Alan F. Schatzberg, William E. Bunney, Huda Akil, Stanley J. Watson
+"Neurotransmission-Related Gene Expression in the Frontal Pole (Brodmann Area 10) is Altered in Subjects with Bipolar Disorder and Schizophrenia" by
+Adriana Medina, Megan Hastings Hagenauer, David M. Krolewski, Evan Hughes, Liam Cannon Thew Forrester, David M. Walsh, Maria Waselus, Evelyn Richardson, Cortney A. Turner, Adolfo Sequeira, Preston Cartagena, Robert C. Thompson, Marquis Vawter, Blynn Bunney, Richard M. Myers, Jack D. Barchas, Francis Lee, Alan F. Schatzberg, William E. Bunney, Huda Akil, Stanley J. Watson.
 medRxiv 2022.06.03.22275600; doi: https://doi.org/10.1101/2022.06.03.22275600
 (Preprint)
 
