@@ -14,7 +14,7 @@ This code was primarily written by Megan Hagenauer, with some additional contrib
 In general, the files are numbered in the order that the analysis was performed. 
 
 Note that for logistical reasons the raw qPCR files for each card are not included in this repository, but I have included the concatenated version of their results ("Concatenated_GabaGlu_wSubjectInfo.csv" , "Concatenated_DA5HT_wSubjectInfo.csv") produced by lines 333-986 in the code.  
-The full qPCR files and metadata will also be released on FigShare (https://doi.org/10.6084/m9.figshare.20520378.v1bc).
+The full qPCR files and metadata were also released on FigShare (https://doi.org/10.6084/m9.figshare.20520378.v1bc).
 
 The code was intended for single use, and is minimally annotated and occasionally non-linear (especially in areas of troubleshooting) or completely tangential to the primary goals of the project. Feel free to message me if you have questions.
 
